@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block left-menu %}
+    {% load blog_tags %}
+    {% tags_menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content-block %}
+    {% if post_list %}
+        {% include "blog/helpers/post_list.html" %}
+    {% else %}
+        <p>No post are available.</p>
+    {% endif %}
+{% endblock %}

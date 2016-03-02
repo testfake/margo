@@ -1,0 +1,47 @@
+#tags-menu {
+	background: transparent url("img/doge/doge_bg.png") no-repeat center;
+	position: relative;
+	width: 150px;
+	height: 200px;
+}
+#tags-menu a {
+	position: absolute;
+}
+.tags ul {
+	list-style-image: url("img/doge/doge-small.png");
+}
+#doge-h1 {
+	background-image: url("img/doge/cool-doge.png");
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 1.5em 4em;
+}
+#coments {
+    margin: 1em;
+}
+.coment {
+    background-color: rgba(255, 255, 255, 0.17);
+    padding: 1em;
+    margin-top: 1em;
+}
+.coment .head .autor {
+    float: left;
+    margin-right: 0.3em;
+}
+#answer {
+    margin: 1em;
+}
+#answer table {
+    width: 100%;
+}
+#answer table th, #answer label, #answer .helptext{
+	display: none;
+}
+#answer textarea {
+    width: 100%;
+    resize:none;
+}
+#answer input, #answer textarea {
+    border: 5px double;
+    background: rgba(255, 255, 255, 0.53);
+}

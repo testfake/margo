@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block left-menu %}
+    {% load blog_tags %}
+    {% tags_menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content-block %}
+    {% include "blog/helpers/post.html" %}
+{% endblock %}
+{% block under-content %}
+    {% if post.comment_set %}
+        <div id="coments">
+        {% for comment in post.comment_set.all|dictsort:'pub_date' %}
+            {% include "blog/helpers/comment.html" %}
+        {% endfor %}
+        </div>
+    {% endif %}
+    <div id="answer">
+        <form action="{% url 'blog:comment' post.id %}" method="post">
+            {% csrf_token %}
+            <table>
+            {{ form }}
+            </table>
+            <br />
+            <input type="submit" value="Отправить" />
+        </form>
+    </div>
+{% endblock %}

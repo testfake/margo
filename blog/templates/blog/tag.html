@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block left-menu %}
+    {% load blog_tags %}
+    {% tags_menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content-block %}
+    <h1 id="doge-h1">{{ tag }}</h1>
+    {% if post_list %}
+        {% include "blog/helpers/post_list.html" %}
+    {% else %}
+        <p>No post are available.</p>
+    {% endif %}
+{% endblock %}

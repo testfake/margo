@@ -1,0 +1,85 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        {% block head %}
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'style.css' %}" />
+        <link rel="stylesheet" href="{% static 'blog/style.css' %}" />
+        <script type="text/javascript" src="{% static 'script.js' %}"></script>
+        {% endblock %}
+    </head>
+    <body>
+        <div id="main-wrapper">
+            <div id="wrapper">
+                <!-- HEADER -->
+                <header id="header" class="parent-block">
+                {% block header %}
+                    <div id="logo-block">
+                        <a href="{% url 'blog:index' %}" id="slogan">watashi no burogu</a>
+                        <img id="logo" src="{% static 'img/logo.bmp' %}" alt="privet" />
+                    </div>
+                    <div class="clear"></div>
+                {% endblock %}
+                </header>
+
+                <aside id="left-menu">
+                    {% block left-menu %}
+                        <div id="soc-list">
+                            <ul>
+                                <li>
+                                    <a href="https://vk.com/id171232287" target="_blank">
+                                        <img src="{% static 'img/icons/VK.png' %}" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/ichigopandaa" target="_blank">
+                                        <img src="{% static 'img/icons/Twitter.png' %}" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/">
+                                        <img src="{% static 'img/icons/lv.png' %}" alt="" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="base-contacts">
+                            <a id="mail" href="mailto:karp@mail.ru">
+                                <img src="{% static 'img/icons/Mail.png' %}" alt="" />
+                                <span>karp@mail.ru</span>
+                            </a>
+                        </div>
+                        <div id="arrow-control">Меню</div>
+                    {% endblock %}
+                </aside>
+
+                <!-- CONTENT -->
+                <article id="content">
+                    {% block content %}
+                        <div id="content-block" class="parent-block">
+                            {% block content-block %}
+                            <a href="{% url 'blog:index' %}">Бложичка</a>
+                            {% endblock %}
+                        </div>
+                        {% block under-content %}
+                        {% endblock %}
+                    {% endblock %}
+                </article>
+            </div>
+            <div class="clear"></div>
+            <div id="up"></div>
+            <!-- FOOTER -->
+            <footer id="footer">
+                <div id="footer-block" class="parent-block">
+                    {% block footer %}
+                    <p>покаааа</p>
+                    <p>&copy; Маргарита Риккерт</p>
+                    {% endblock %}
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

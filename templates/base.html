@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<html>
+	<head>
+	{% block head %}
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" />
+	{% endblock %}
+	</head>
+	<body>
+	{% block header %}
+		<h1>Fuck yeah!</h1>
+		{% block title %}{% endblock %}
+		{% block menu %}{% endblock %}
+	{% endblock %}
+
+	{% block page %}
+		{% block content %}
+		{% endblock %}
+	{% endblock %}
+
+	{% block footer %}
+		{% block copyright %}
+		{% endblock %}
+	{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,8 @@
+{% load filters %}
+<div id="tags-menu">
+	<h3>Доги</h3>
+	{% for tag in tags %}
+		{% random_pos as pos %}
+		<a href="{% url 'blog:tag' tag.id %}" style="color:{{ colors|random }};top: {{ pos.top }}%;left: {{ pos.left }}%;">{{ tag.tag_name }}</a>
+	{% endfor %}
+</div>
