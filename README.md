@@ -1,3 +1,2 @@
 # margo
-Бложичка на django\n
-test
+Бложичка на django test
